@@ -1,0 +1,36 @@
+package response
+
+type Code string
+
+const (
+	CR200 Code = "CR200"
+	CR201 Code = "CR201"
+	CR202 Code = "CR202"
+	CR203 Code = "CR203"
+	CR204 Code = "CR204"
+	CR205 Code = "CR205"
+	CR206 Code = "CR206"
+	CR207 Code = "CR207"
+	CR208 Code = "CR208"
+	CR209 Code = "CR209"
+	CR400 Code = "CR400"
+	CR401 Code = "CR401"
+	CR402 Code = "CR402"
+	CR403 Code = "CR403"
+	CR404 Code = "CR404"
+	CR405 Code = "CR405"
+	CR406 Code = "CR406"
+	CR407 Code = "CR407"
+	CR408 Code = "CR408"
+	CR409 Code = "CR409"
+	CR500 Code = "CR500"
+	CR501 Code = "CR501"
+	CR502 Code = "CR502"
+	CR503 Code = "CR503"
+	CR504 Code = "CR504"
+	CR505 Code = "CR505"
+	CR506 Code = "CR506"
+	CR507 Code = "CR507"
+	CR508 Code = "CR508"
+	CR509 Code = "CR509"
+)

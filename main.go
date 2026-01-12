@@ -30,7 +30,6 @@ func main() {
 	r := chi.NewRouter()
 	provider := response.NewResponseProvider()
 
-	// sample data generator
 	makeUsers := func() []User {
 		now := time.Now().Format(time.RFC3339)
 		return []User{
@@ -40,7 +39,6 @@ func main() {
 		}
 	}
 
-	// GET /ok
 	r.Get("/ok", func(w http.ResponseWriter, r *http.Request) {
 		resp := response.Success(provider, response.ResponseParam[any]{
 			Code: response.CR200,
@@ -49,7 +47,6 @@ func main() {
 		writeResp(w, resp)
 	})
 
-	// GET /users -> return list of 3 users
 	r.Get("/users", func(w http.ResponseWriter, r *http.Request) {
 		users := makeUsers()
 		resp := response.Success(provider, response.ResponseParam[[]User]{
@@ -59,7 +56,6 @@ func main() {
 		writeResp(w, resp)
 	})
 
-	// GET /users/{id} -> return single user or 404
 	r.Get("/users/{id}", func(w http.ResponseWriter, r *http.Request) {
 		id := chi.URLParam(r, "id")
 		users := makeUsers()
@@ -80,7 +76,6 @@ func main() {
 		writeResp(w, resp)
 	})
 
-	// Example error endpoint
 	r.Get("/error", func(w http.ResponseWriter, r *http.Request) {
 		resp := response.ClientError(provider, response.ResponseParam[any]{
 			Code:   response.CR400,
